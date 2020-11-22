@@ -1,19 +1,30 @@
 package com.intercop.fullstack.intercopapi.pojo;
 
-public class Customer {
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
+@ApiModel(description = "Clase Cliente")
+public class Customer {
+    @ApiModelProperty(notes = "Nombre del cliente.",
+            example = "OMAR", required = true, position = 0)
     private String name;
 
+    @ApiModelProperty(notes = "Apellidos del cliente.",
+            example = "MUÑIZ", required = true, position = 1)
     private String surname;
 
+    @ApiModelProperty(notes = "Edad del cliente.",
+            example = "23", required = true, position = 2)
     private int age;
 
+    @ApiModelProperty(notes = "Fecha de nacimiento.",
+            example = "2010-12-12", required = true, position = 3)
     private String birthDate;
 
     private String probableDeathDate;
 
     public Customer() {
-        
+
     }
 
     public Customer(String name, String surname, int age, String birthDate) {
